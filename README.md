@@ -62,4 +62,12 @@ CREATE TABLE price(
 );
 </p>
 
-<h4>Notebooks</h4>
+<h2>Notebooks</h2>
+<h6><em>This notebook includes the data I retrieved using Ticketmaster’s Discovery API:</em></h6>
+https://github.com/cnicolejoaquin/sql-project/blob/main/data_collection.ipynb
+
+<h6><em>This notebook includes all of the sql queries I ran to form insights on the popularity of the venues, price ranges, and event frequencies during different seasons with descriptions of what each query is intended to do:</em></h6>
+https://github.com/cnicolejoaquin/sql-project/blob/main/sql_analysis.ipynb
+
+<h2>Future Improvements</h2>
+<p>If I had more time, I would have liked to analyze more genres and not just rock and pop. I would have loved to see how genres like R&B and alternative rock differ from the other two. I also would have liked to use the upcoming events table and determine the average days an event usually goes on during their stop in LA. Additionally, I think it would have been interesting if I also retrieved the venue capacity and determined whether it was a factor in the different prices. Aside from if I had more time, one thing I wished I had access to was the Partner API as it could have given insights on which performers were underperforming and overperforming as well as inventory data. I think it would have been interesting to see which events have limited tickets and if LA had more tickets sold than other cities. Having access to the Partner API could provide insights for stakeholders such as which cities and performers they should focus on for future events. It would make it easier to make decisions on how to allocate resources.</p>
