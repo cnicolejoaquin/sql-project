@@ -13,4 +13,53 @@
 
 <h2>Data</h2>
 <h6><em>Ticketmaster API I used to retrieve the data:</em></h6>
-(https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/)
+https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/
+
+<p>I created four tables in my Ticketmaster database called shows, information, upcoming_events, and price.</p>
+<p>Shows Table:
+CREATE TABLE shows (
+	artist_id INT NOT NULL AUTO_INCREMENT,
+	show_name VARCHAR(255) NOT NULL,
+	genre VARCHAR(30) NOT NULL,
+	subgenre VARCHAR(255),
+	PRIMARY KEY(artist_id)
+);
+
+Information Table:
+CREATE TABLE information(
+	event_id VARCHAR(255) NOT NULL,
+	artist_id INT NOT NULL AUTO_INCREMENT,
+	show_name VARCHAR(255) NOT NULL,
+	event_date DATE NOT NULL,
+	venue VARCHAR(255) NOT NULL,
+	address VARCHAR(255) NOT NULL,
+	city VARCHAR (255) NOT NULL,
+	state_code VARCHAR (255) NOT NULL,
+	ticket_limit INT(5) NOT NULL,
+	PRIMARY KEY(event_id),
+	FOREIGN KEY (artist_id) REFERENCES shows(artist_id)
+);
+
+Upcoming_events Table:
+CREATE TABLE upcoming_events(
+	artist_id INT NOT NULL AUTO_INCREMENT,
+	show_name VARCHAR(255) NOT NULL,
+	total INT(5) NOT NULL,
+	ticketmaster INT(5) NOT NULL,
+	PRIMARY KEY(artist_id),
+	FOREIGN KEY (artist_id) REFERENCES shows(artist_id)
+);
+
+Price Table:
+CREATE TABLE price(
+	event_id VARCHAR(255) NOT NULL,
+	artist_id INT NOT NULL AUTO_INCREMENT,
+	show_name VARCHAR(255) NOT NULL,
+	min_price FLOAT NOT NULL,
+	max_price FLOAT NOT NULL,
+	PRIMARY KEY (event_id),
+	FOREIGN KEY (artist_id) REFERENCES shows(artist_id)
+);
+</p>
+
+<h4>Notebooks</h4>
